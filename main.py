@@ -33,7 +33,7 @@ def curling(query: str):
     counter = 1
     while True:
         url = f"https://scholar.google.com/scholar?start={url_counter}&q={query}&hl=en&as_sdt=0,5"
-        #sleep(random.randint(15,60))
+        sleep(random.randint(15,60))
         response = requests.get(url, headers=header)
         print(f'status : {response.status_code} ')
         content = BeautifulSoup(response.text, 'html.parser')
