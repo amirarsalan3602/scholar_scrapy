@@ -9,7 +9,7 @@ workbook = Workbook()  # create a new exel file
 sheet = workbook.active  # create a new sheet
 
 header = {
-    'Cookie': '1P_JAR=2023-05-11-20; AEC=AUEFqZfNUjj55dRukdioVVp7vrMR3npE3kbviCLC4CAO_9YjwqluN8vYFQ; NID=511=OsY3Auqn86oNeawW0qKdkREJWIUt9145Ld8OwhlzDf53YZ9pfGU3GBPWvAceGpBvsAWrg864gFYwB7KyybSrx16f_FxrdySHmCHnnWFgAQs1jNs4UTMjBxIpLp6WZUryYUHA4uu3POLwwN2Jzyba7vlyvndePAPjNNXlpwoPEEM; GSP=LM=1683836743:S=mXXUyXv9SKeiE-9N',
+   # 'Cookie': '1P_JAR=2023-05-11-20; AEC=AUEFqZfNUjj55dRukdioVVp7vrMR3npE3kbviCLC4CAO_9YjwqluN8vYFQ; NID=511=OsY3Auqn86oNeawW0qKdkREJWIUt9145Ld8OwhlzDf53YZ9pfGU3GBPWvAceGpBvsAWrg864gFYwB7KyybSrx16f_FxrdySHmCHnnWFgAQs1jNs4UTMjBxIpLp6WZUryYUHA4uu3POLwwN2Jzyba7vlyvndePAPjNNXlpwoPEEM; GSP=LM=1683836743:S=mXXUyXv9SKeiE-9N',
     'Sec-Ch-Ua': '"Chromium";v="109", "Not_A Brand";v="99"',
     'Sec-Ch-Ua-Mobile': '?0',
     'Sec-Ch-Ua-Platform': "Linux",
@@ -33,7 +33,7 @@ def curling(query: str):
     counter = 1
     while True:
         url = f"https://scholar.google.com/scholar?start={url_counter}&q={query}&hl=en&as_sdt=0,5"
-        sleep(random.randint(15,60))
+        #sleep(random.randint(15,60))
         response = requests.get(url, headers=header)
         print(f'status : {response.status_code} ')
         content = BeautifulSoup(response.text, 'html.parser')
@@ -48,4 +48,4 @@ def curling(query: str):
         url_counter += 10
 
 
-curling(query='خشونت خانگی')
+curling('خشونت خانگی')
